@@ -1,0 +1,157 @@
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: Arial;
+    font-weight: bold;
+    color: #363636;
+    background-color: #F2F2F2;
+    transition: 1s;
+}
+
+p{
+    margin:0;
+}
+
+.logo{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.textmain
+{
+    font-size: 3em;
+    margin:0;
+    margin-bottom: 1em;
+}
+
+.fillgroup 
+{
+    text-align-last: center;
+}
+
+button {
+    margin-top: 1rem;
+    width: 100%;
+    height: auto;
+    background-color: #E9A90D;
+    border: 0;
+    color: white;
+    font-family: Arial;
+    font-weight: bold;
+    border-radius: 0.5em;
+    font-size: 1.5em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    padding-right: 2em;
+    padding-left: 2em;
+}
+
+input {
+    font-size: xx-large;
+    border: 0;
+    border-radius: 0.3rem;
+    margin-top: 0.5rem;
+    background-color: #F2F2F2;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input:active {
+    border-color: #E9A90D;
+}
+
+.form_style{
+    display: flex;
+    justify-content: center;
+}
+
+.form_background {
+    padding: 1rem;
+    background: white;
+    border-radius: 2rem;
+}
+
+ul{
+   padding: 0;
+}
+
+.group_reg{
+    display: flex;
+    justify-content: space-between;
+}
+
+.input_group_institute input{
+    width: 15rem;
+}
+
+.input_group_specialty input{
+    width: 6rem;
+}
+
+.error {
+    color: #FE475C;
+    margin-top: 1rem;
+}
+
+.a_flex{
+    display: flex;
+    margin-top: 10px;
+}
+
+a{
+    width: 100%;
+    border: none;
+    border-radius: 0.4em;
+    color: white;
+    padding: 1em;
+    font-size: 1rem;
+    text-decoration:none;
+    text-align: center;
+}
+
+select{
+    margin-top: 0.5rem;
+    font-size: 1.5rem;
+    border: 0;
+    border-radius: 0.3rem;
+    background-color: #F2F2F2;
+}
+
+.lesson_card {
+    position: relative;
+    margin: 0% 1% 5% 1%;
+    color: #363636;
+    background: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 30px rgba(0,0,0,0.10);
+}
+
+
+@media screen and (max-width:1040px) {
+    body{
+        background: white;
+    }
+
+    .logoposition{
+        justify-content:center;
+    }
+
+    input{
+        font-size: 1.5rem;
+    }
+
+    .input_position {
+        font-size: 1.2rem;
+    }
+
+    button{
+        font-size: 1.3rem;
+        margin-top: 1rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}

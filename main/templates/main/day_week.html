@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>{{ title }}</title>
+        <link rel="stylesheet" href="{% static 'style/style.css'%}" />
+        <link rel="icon" type="image/png" href="{% static 'icon/favicon-16x16.png' %}" sizes="16x16">
+        <link rel="apple-touch-icon" sizes="120x120" href="{% static 'icon/apple-icon-120x120.png'%}">
+    </head>
+    <body>
+        <header>
+            <div class="info_header">
+                <div class="logo_div">
+                    <img style="height: 30px;" src="{% static 'images/logo-50x50.png'%}" />
+                    <p style="font-size: 20px;">TimeUniver</p>
+                </div>
+            </div>
+        </header>
+        <div class="wrap1">
+            <div class="wrap2">
+                <p>{{ title }}</p>
+                <div class="flex">
+                    {% for lesson in lessons %}
+                        <a href="{% url 'lesson' group lesson.lesson_id %}" class="lesson_card">
+                            <p>{{ lesson.lesson }}</p>
+                            <p style="font-weight: normal; font-size: 1.5rem;">{{ lesson.teacher }}</p>
+                            <p class="time">{{ lesson.start_time|date:"G:i" }}-{{ lesson.end_time|date:"G:i" }}</p>
+                            <div class="additional_information">
+                                {% if lesson.type_lesson == 1 %}
+                                    <p class="time_and_class_p" style="background: #A458E8">Практика</p>
+                                {% elif lesson.type_lesson == 2 %}
+                                    <p class="time_and_class_p" style="background: #7CD328">Лекция</p>
+                                {% endif%}
+                                <p class="time_and_class_p" style="color:#343232;;margin-left: 1rem;">{{ lesson.classroom }}</p>
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!--<footer>
+    
+        </footer>-->
+    </body>
+    </html>

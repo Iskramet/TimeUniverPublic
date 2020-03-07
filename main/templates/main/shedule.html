@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>{{ title }}</title>
+        <link rel="stylesheet" href="{% static 'style/style.css'%}" />
+        <link rel="icon" type="image/png" href="{% static 'icon/favicon-16x16.png' %}" sizes="16x16">
+        <link rel="apple-touch-icon" sizes="120x120" href="{% static 'icon/apple-icon-120x120.png'%}">
+    </head>
+    <body>
+        <header>
+            <div class="info_header">
+                <div class="logo_div">
+                    <img style="height: 30px;" src="{% static 'images/logo-50x50.png'%}" />
+                    <p style="font-size: 20px;">TimeUniver</p>
+                </div>
+            </div>
+        </header>
+        <div class="wrap1">
+            <div class="wrap2">
+                
+                    {% if lessons_today %}
+                        <a href="{% url 'day_week' group day_week %}"><p>Сегодня</p></a>
+                        <div class="flex">
+                            {% for lesson in lessons_today %}
+                                <a href="{% url 'lesson' group lesson.lesson_id %}" class="lesson_card">
+                                    <p>{{ lesson.lesson }}</p>
+                                    <p style="font-weight: normal; font-size: 1.5rem;">{{ lesson.teacher }}</p>
+                                    <p class="time">{{ lesson.start_time|date:"G:i" }}-{{ lesson.end_time|date:"G:i" }}</p>
+                                    <div class="additional_information">
+                                        {% if lesson.type_lesson == 1 %}
+                                            <p class="time_and_class_p" style="background: #A458E8">Практика</p>
+                                        {% elif lesson.type_lesson == 2 %}
+                                            <p class="time_and_class_p" style="background: #7CD328">Лекция</p>
+                                        {% endif%}
+                                        <p class="time_and_class_p" style="color:#343232;;margin-left: 1rem;">{{ lesson.classroom }}</p>
+                                    </div>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <p>Сегодня</p>
+                        <div class="flex">
+                            <a class="lesson_card" style="text-align: center;" href="https://vk.com/wall-191945?q=%23%D0%BD%D0%B0%D1%88%D0%B8_%D0%B4%D1%80%D1%83%D0%B7%D1%8C%D1%8F">
+                                <p>Сегодня выходной</p>
+                                <p style="font-size: 1rem;margin-top: 0.5rem;">Не зевай и посмотри эту подборку куда можно сходить</p>
+                                <p style="padding: 0.5rem;margin-top: 0.5rem;background: #897CE3;color: white; border-radius: 0.5rem;">Смотреть</p>
+                            </a>
+                        </div>
+                    {% endif %}
+
+                    {% if lessons_tomorrow %}
+                        <p>Завтра</p>
+                        <div class="flex">
+                            {% for lesson in lessons_tomorrow %}
+                                <a href="{% url 'lesson' group lesson.lesson_id %}" class="lesson_card">
+                                    <p>{{ lesson.lesson }}</p>
+                                    <p style="font-weight: normal;font-size: 1.5rem;">{{ lesson.teacher }}</p>     <!--СДЕЛАТЬ ЧЕРЕЗ КЛАСС-->
+                                    <p class="time">{{ lesson.start_time|date:"G:i" }}-{{ lesson.end_time|date:"G:i" }}</p>
+                                    <div class="additional_information">
+                                        {% if lesson.type_lesson == 1 %}
+                                            <p class="time_and_class_p" style="background: #A458E8">Практика</p>
+                                        {% elif lesson.type_lesson == 2 %}
+                                            <p class="time_and_class_p" style="background: #7CD328">Лекция</p>
+                                        {% endif%}
+                                        <p class="time_and_class_p" style="color:#343232;margin-left: 1rem;">{{ lesson.classroom }}</p>  <!--СДЕЛАТЬ ЧЕРЕЗ КЛАСС-->
+                                    </div>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                        
+                    
+                <div class="flex" style="justify-content: space-between;">
+                    {% for day_week_key, day_week in day_week_all.items %}
+                        <div class="div_card_lessons">
+                            <p>{{ day_week }}</p>
+                            {% for parity_week_key, parity_week in parity_week_all.items %}
+                                <div>
+                                    <p style="font-weight: normal;">{{ parity_week }}</p>
+                                    <div style="display:flex;">
+                                        <a class="card_lessons" href="{% url 'day_week' group day_week_key %}"  style="margin: 1rem 0 1rem 0;">
+                                            <div style="display: flex; justify-content: space-between;">
+                                                <p>Дисциплина</p>
+                                                <p>Время</p>
+                                            </div>
+                                            {% for lessons in lessons_all %}
+                                                {% if lessons.day_week == day_week_key and lessons.parity_week == parity_week_key or lessons.day_week == day_week_key and lessons.parity_week == 3 %}
+                                                    <div class="today_allday_div_lesson_and_time">
+                                                        <p style="font-size: 1rem">{{ lessons.lesson }}</p>
+                                                        <p style="font-size: 1rem">{{ lessons.start_time|date:"G:i" }}-{{ lessons.end_time|date:"G:i" }}</p>
+                                                    </div>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                </div>
+        </div>
+    </div>
+</body>
+</html>

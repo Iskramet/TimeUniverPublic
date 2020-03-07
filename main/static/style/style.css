@@ -1,0 +1,351 @@
+body {
+    margin: auto;
+    background-color: #FAFAFA;
+    font-family: Arial;
+    font-weight: bold;
+    color: #343232;
+    transition: 0.5s;
+}
+header {
+    position: fixed;
+    background-color: #FFF;
+    font-size: 1rem;
+    width: 100%;
+    height: 50px;
+    z-index: 1;
+    box-shadow: 0 0px 22px 0em rgba(0,0,0,0.25);
+}
+
+header img{
+    height: 25px;
+
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+}
+
+p{
+    margin: 0;
+    font-size: 27px;
+}
+
+a {
+    text-decoration: none;
+    color: #343232;
+}
+
+button{
+    text-align: left;
+}
+
+.logo_div {
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+button{
+    background: 0;
+    padding: 0;
+    border: 0;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+
+.exit{
+    display: flex;
+    align-items: center;
+}
+
+.news_main
+{
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 1rem;
+}
+
+.a_news{
+    margin-top: 2em;
+    width: 30%;
+    height: auto;
+    border-radius: 1rem;
+    background: #FFF;
+}
+
+.a_news_img{
+    width: 100%;
+    border-radius: 1rem;
+}
+
+input {
+    color: #343232;
+    font-weight: bold;
+    width: 100%;
+    font-size: 2rem;
+    border: 0;
+    /*border-radius: 0.5rem;
+    background: #F2F2F2;*/
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    -webkit-appearance: none;
+}
+
+input:focus{
+    outline: none;
+}
+
+.input_position{
+    margin-top: 1rem;
+}
+
+.input_time{
+    display: flex;
+}
+
+select {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: white;
+    border: 0;
+    border-radius: 0.5rem;
+    color: #343232;
+    -webkit-appearance: none;
+}
+
+.flex{
+    display: flex;
+    flex-flow: wrap;
+}
+
+.button_news_botton {
+    margin-top: 2rem;
+    display: flex;
+}
+
+.button_news_botton_button {
+    background: #FFF;
+    border-radius: 1em;
+    display: flex;
+}
+
+.button_news_botton_img{
+    width: 30%;
+    border-radius: 1rem;
+}
+
+.today {
+    background: #897CE3;
+    padding: 1rem;
+    border-radius: 1em;
+    margin-top: 1rem;
+}
+
+.today_text_lesson{
+    color: white;
+
+}
+
+.lesson_card {
+    position: relative;
+    width: 27.5%;
+    margin: 2% 1% 2% 1%;
+    color: #343232;
+    background: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 30px rgba(0,0,0,0.10);
+}
+
+
+.news{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+.info_news{
+    padding: 1rem;
+}
+
+.info_news_main_text {
+    font-family: Arial;
+    font-weight: bold;
+}
+
+.info_news_text {
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.etc{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.shedule_etc{
+    cursor: pointer;
+    background: white;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+
+.main_news {
+    margin-top: 50px;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.info_header {
+    padding: 0rem 1rem 0rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+}
+
+.additional_information{
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+.time_and_class_p {
+    color: white;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+}
+
+.today_allday_div_lesson_and_time {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    align-items: baseline;
+}
+
+.wrap1{
+    padding-top: 50px;
+     
+}
+
+.wrap2{
+    padding: 2%;
+}
+
+.wrap_center{
+    margin: 0 auto;
+    width: 50%;
+}
+
+.profile_position {
+    height: -webkit-fill-available;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile_div{
+    padding: 2rem;
+    background-color: white;
+}
+
+.group_position{
+    display:flex;
+}
+
+.p_lite {
+    font-size: 1.5rem;
+}
+
+.div_card_lessons {
+    width: 30.5%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.card_lessons {
+    background: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 100%;
+    box-shadow: 0 0 30px rgba(0,0,0,0.10);
+}
+
+.position{
+    position: relative;
+    height: 100%;
+}
+
+.menu{
+    height: -webkit-fill-available;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial;
+    font-weight: bold;
+}
+
+.time{
+    font-size: 1.5rem;
+}
+
+#id_lesson, #id_parity_week, #id_day_week, #id_type_lesson {
+    text-align-last: center;
+    text-align: center;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    background: #897CE3;
+    color: white;
+    width: 75%;
+    border-radius: 0.5rem;
+}
+
+
+#id_start_time{
+    font-size: 1rem;
+    text-align: center;
+    background: white;
+}
+
+#id_end_time{
+    font-size: 1rem;
+    text-align: center;
+    background: white;
+}
+
+#id_teacher{
+    font-weight: normal;
+}
+
+.button_add{
+    width: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background: #e9a90d;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin-top: 2rem;
+}
+
+@media screen and (max-width:1040px) {
+
+    .lesson_card {
+        width: 100%; 
+    }
+
+    .div_card_lessons {
+        width: 100%;
+    }
+
+}
